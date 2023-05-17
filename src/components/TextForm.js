@@ -29,9 +29,9 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" id="myBox" onChange={handleOnChange} value= {text} rows="8"></textarea>
             </div>
-            <button className="btn btn-outline-primary" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-outline-primary mx-3" onClick={handleLoClick}>Convert to Lowercase</button>
-            <button className="btn btn-outline-primary mx-3" onClick={handleClearClick}>Clear text</button>
+            <button className="btn btn-outline-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-outline-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button className="btn btn-outline-primary mx-1" onClick={handleClearClick}>Clear text</button>
         </div>
         <div className="container my-3">
             <h1>Your text summary</h1>
