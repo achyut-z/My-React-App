@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 export default function TextForm(props) {
     const handleUpClick = () => {
         let newText = text.toUpperCase();
@@ -36,8 +35,16 @@ export default function TextForm(props) {
     const handleOnChange = (event) => {
         setText(event.target.value)
     }
+
     const [text, setText] = useState("");
-    // setText("gvdfbfghfgf")
+
+    const words = text.split(" ");
+    let wordCount = 0
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].trim() !== "")
+            wordCount++;
+    }
+
     return (
         <>
             <div className='container' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
@@ -53,8 +60,8 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h1>Your text summary</h1>
-                <p>{text.split(" ").length} words, {text.length} characters</p>
-                <p>{0.008 * text.split(" ").length} Minutes read</p>
+                <p>{wordCount} words, {text.length} characters</p>
+                <p>{wordCount === 0 ? 0 : 0.008 * text.split(" ").length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Enter something in the text box above to preview it here"}</p>
             </div>
