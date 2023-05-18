@@ -9,7 +9,7 @@ function App() {
   const [mode, setMode] = useState('light'); //whether dark mode is enabled or not
   //#212529 hexcode for dark colour of navbar 
   const toggleMode = () => {
-    if(mode === 'light') {
+    if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = '#052640'
     }
